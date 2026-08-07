@@ -1,0 +1,50 @@
+/* ==========================================================================
+   FAKULTAIR FTI 2026 — GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.5;
+  background-color: var(--bg-primary);
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Image Component Presets */
+.img-contain {
+  object-fit: contain;
+}
+
+.img-cover, .avatar, .banner, .thumbnail {
+  object-fit: cover;
+}
+
+button, input, textarea {
+  font: inherit;
+}

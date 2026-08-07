@@ -1,0 +1,63 @@
+/* ==========================================================================
+   FAKULTAIR FTI 2026 — RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Mobile Small (<= 480px) */
+@media (max-width: 480px) {
+  .linktree-container {
+    padding: var(--space-lg) var(--space-xs);
+  }
+
+  .profile-title {
+    font-size: 1.4rem;
+  }
+
+  .profile-tagline {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
+
+  .profile-description {
+    font-size: 0.825rem;
+  }
+
+  .link-card {
+    min-height: 66px;
+    padding: 10px 14px;
+  }
+
+  .link-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .link-content {
+    margin: 0 var(--space-xs);
+  }
+
+  .link-title {
+    font-size: 0.9rem;
+  }
+
+  .link-description {
+    font-size: 0.775rem;
+  }
+}
+
+/* Tablet & Up (>= 768px) */
+@media (min-width: 768px) {
+  .linktree-container {
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

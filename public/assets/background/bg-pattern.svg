@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <radialGradient id="gradBase" cx="50%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#003566" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#001D3D" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000814" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="goldTopLight" cx="80%" cy="15%" r="45%">
+      <stop offset="0%" stop-color="#FFC300" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFC300" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Deep Sea Primary Base -->
+  <rect width="1440" height="900" fill="#000814"/>
+  
+  <!-- Ocean Depth Radial Gradient Overlay -->
+  <rect width="1440" height="900" fill="url(#gradBase)"/>
+
+  <!-- Soft Gold Top Light Accent -->
+  <circle cx="1150" cy="135" r="650" fill="url(#goldTopLight)"/>
+
+  <!-- Subtle Cyber Tech Grid Mesh -->
+  <rect width="1440" height="900" fill="url(#grid)"/>
+</svg>
