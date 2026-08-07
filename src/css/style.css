@@ -7,45 +7,52 @@
 @import './responsive.css';
 
 /* ==========================================================================
-   RESPONSIVE BACKGROUND SYSTEM (MOBILE FIRST)
+   RESPONSIVE BACKGROUND SYSTEM (MOBILE FIRST — VITE & VERCEL READY)
    ========================================================================== */
 
-/* Base Background: Mobile & Tablet (0px - 1023px) */
-.bg-layer {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  width: 100%;
+html {
   height: 100%;
-  pointer-events: none;
-  background-color: var(--bg-primary, #000814);
-  background-image: url('/assets/background/BG-Mobile.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
-/* Subtle Dark Overlay to Enhance Text Readability */
-.bg-layer::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 8, 20, 0.12);
-  pointer-events: none;
+/* Base Mobile & Tablet Background (0px - 1023px) */
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--bg-primary, #000814);
+  background-image: url("/assets/background/BG-Mobile.png"), linear-gradient(135deg, #000814 0%, #001D3D 100%);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 /* Desktop Background Breakpoint (1024px+) */
 @media (min-width: 1024px) {
-  .bg-layer {
-    background-image: url('/assets/background/BG-Desktop.png');
-    background-position: center center;
+  body {
+    background-image: url("/assets/background/BG-Desktop.png"), url("/assets/background/BG-Mobile.png"), linear-gradient(135deg, #000814 0%, #001D3D 100%);
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }
 
-/* Main Layout Container */
+/* Subtle Dark Overlay to Enhance Text Readability (WCAG Compliant) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(0, 8, 20, 0.18);
+  pointer-events: none;
+}
+
+/* Main Layout Container (Stacked Above Overlay) */
 .linktree-container {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: var(--container-width);
   min-height: 100vh;
