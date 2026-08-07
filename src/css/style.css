@@ -77,50 +77,25 @@ body::before {
 .profile-logo-wrapper {
   position: relative;
   margin-bottom: var(--space-sm);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-logo-picture {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.profile-logo-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--accent), var(--surface-hover));
-  z-index: -1;
-  opacity: 0.35;
-  filter: blur(10px);
-  transition: opacity 300ms ease;
-}
-
-.profile-logo-wrapper:hover::after {
-  opacity: 0.75;
+  width: 100%;
 }
 
 .profile-logo {
-  width: clamp(90px, 10vw, 140px);
-  height: clamp(90px, 10vw, 140px);
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius-full);
-  object-fit: contain;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: transparent;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
   display: block;
   margin: 0 auto;
+  width: clamp(92px, 10vw, 140px);
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.28);
   transition: transform 300ms ease, box-shadow 300ms ease;
 }
 
 .profile-logo:hover {
   transform: scale(1.03);
-  box-shadow: 0 12px 35px rgba(255, 195, 0, 0.18);
 }
 
 .profile-title {
