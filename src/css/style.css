@@ -19,16 +19,7 @@
   height: 100%;
   pointer-events: none;
   background-color: var(--bg-primary, #000814);
-  background-image: 
-    radial-gradient(ellipse at 20% 0%, rgba(0, 53, 102, 0.75) 0%, transparent 60%),
-    radial-gradient(circle at 85% 15%, rgba(255, 195, 0, 0.06) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 100%, rgba(0, 29, 61, 0.85) 0%, transparent 70%),
-    image-set(
-      url('/assets/background/BG-Mobile.avif') type('image/avif'),
-      url('/assets/background/BG-Mobile.webp') type('image/webp'),
-      url('/assets/background/BG-Mobile.png') type('image/png'),
-      url('/assets/background/bg-pattern.svg') type('image/svg+xml')
-    );
+  background-image: url('/assets/background/BG-Mobile.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -40,23 +31,14 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 8, 20, 0.22);
+  background-color: rgba(0, 8, 20, 0.12);
   pointer-events: none;
 }
 
 /* Desktop Background Breakpoint (1024px+) */
 @media (min-width: 1024px) {
   .bg-layer {
-    background-image: 
-      radial-gradient(ellipse at 20% 0%, rgba(0, 53, 102, 0.75) 0%, transparent 60%),
-      radial-gradient(circle at 85% 15%, rgba(255, 195, 0, 0.06) 0%, transparent 45%),
-      radial-gradient(ellipse at 50% 100%, rgba(0, 29, 61, 0.85) 0%, transparent 70%),
-      image-set(
-        url('/assets/background/BG-Desktop.avif') type('image/avif'),
-        url('/assets/background/BG-Desktop.webp') type('image/webp'),
-        url('/assets/background/BG-Desktop.png') type('image/png'),
-        url('/assets/background/bg-pattern.svg') type('image/svg+xml')
-      );
+    background-image: url('/assets/background/BG-Desktop.png');
     background-position: center center;
     background-size: cover;
   }
