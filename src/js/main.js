@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initImageFallbacks();
 
   // Attach click listeners to link cards for tracking
-  const linkCards = document.querySelectorAll('.link-card, .social-button');
+  const linkCards = document.querySelectorAll('.link-card');
   linkCards.forEach((card) => {
     card.addEventListener('click', () => {
       const title = card.querySelector('.link-title')?.textContent || card.getAttribute('aria-label') || 'Link';

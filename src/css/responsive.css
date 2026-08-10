@@ -4,6 +4,11 @@
 
 /* Mobile Small (<= 480px) */
 @media (max-width: 480px) {
+  :root {
+    --space-card: 10px;
+    --space-profile-links: 20px;
+  }
+
   .linktree-container {
     padding: var(--space-lg) var(--space-xs);
   }

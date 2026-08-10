@@ -8,7 +8,6 @@ export function initStaggerAnimation() {
   }
 
   const cards = document.querySelectorAll('.link-card');
-  const socialButtons = document.querySelectorAll('.social-button');
   
   cards.forEach((card, index) => {
     card.style.opacity = '0';
@@ -19,16 +18,5 @@ export function initStaggerAnimation() {
       card.style.opacity = '1';
       card.style.transform = 'translateY(0)';
     }, 120 + index * 55);
-  });
-
-  socialButtons.forEach((btn, index) => {
-    btn.style.opacity = '0';
-    btn.style.transform = 'translateY(8px)';
-    btn.style.transition = 'opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1)';
-    
-    setTimeout(() => {
-      btn.style.opacity = '1';
-      btn.style.transform = 'translateY(0)';
-    }, 60 + index * 40);
   });
 }

@@ -10,7 +10,6 @@
   /* Surfaces */
   --surface: #001D3D;
   --surface-hover: #003566;
-  --surface-social: rgba(0, 29, 61, 0.65);
 
   /* Accents */
   --accent: #FFC300;
@@ -47,6 +46,8 @@
   --space-md: 24px;
   --space-lg: 32px;
   --space-xl: 48px;
+  --space-profile-links: 24px;
+  --space-card: 12px;
 
   /* Border Radius */
   --radius-sm: 8px;

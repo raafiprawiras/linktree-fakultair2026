@@ -70,7 +70,7 @@ body::before {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-profile-links);
   width: 100%;
 }
 
@@ -124,52 +124,6 @@ body::before {
   margin: 0 auto;
 }
 
-/* Social Icons Navigation */
-.social-links-section {
-  width: 100%;
-  margin-bottom: var(--space-lg);
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-xs);
-  flex-wrap: wrap;
-}
-
-.social-button {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-full);
-  background: var(--surface-social);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
-}
-
-.social-button:hover {
-  transform: translateY(-2px);
-  background: var(--surface-hover);
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 4px 14px rgba(255, 195, 0, 0.2);
-}
-
-.social-button:active {
-  transform: scale(0.96);
-}
-
-.social-icon {
-  flex-shrink: 0;
-}
-
 /* Main Link Cards */
 .links-section {
   width: 100%;
@@ -179,7 +133,7 @@ body::before {
 .link-cards-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-card);
   width: 100%;
 }
 
@@ -299,7 +253,6 @@ body::before {
 }
 
 /* Keyboard Focus */
-.social-button:focus-visible,
 .link-card:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
