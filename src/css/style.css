@@ -245,6 +245,133 @@ body::before {
   color: var(--accent-hover);
 }
 
+/* Nametag and Pin Modals */
+.nametag-trigger {
+  cursor: pointer;
+}
+
+.nametag-trigger .link-title {
+  white-space: normal;
+}
+
+html:has(.nametag-dialog[open]) {
+  overflow: hidden;
+}
+
+.nametag-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(460px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: clamp(20px, 5vw, 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-lg);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow);
+}
+
+.nametag-dialog::backdrop {
+  background: rgba(0, 8, 20, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.nametag-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.nametag-label {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.nametag-close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.nametag-dialog h2 {
+  font-size: clamp(1.375rem, 5vw, 1.625rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+#nametag-description, #pin-description, .nametag-note {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.nametag-options {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.nametag-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nametag-option[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.nametag-code {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+  width: 28px;
+}
+
+.nametag-name, .nametag-status {
+  display: block;
+}
+
+.nametag-name {
+  font-weight: 600;
+}
+
+.nametag-status {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.nametag-close:hover, .nametag-option[href]:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.nametag-close:focus-visible, .nametag-option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* Footer Section */
 .footer-section {
   margin-top: auto;

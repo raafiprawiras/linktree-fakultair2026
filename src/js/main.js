@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initStaggerAnimation();
   initImageFallbacks();
 
+  document.querySelectorAll('[aria-haspopup="dialog"]').forEach((trigger) => {
+    const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
+    trigger.addEventListener('click', () => dialog.showModal());
+    dialog.addEventListener('click', (event) => {
+      if (event.target !== dialog) return;
+      const { left, right, top, bottom } = dialog.getBoundingClientRect();
+      if (event.clientX < left || event.clientX > right || event.clientY < top || event.clientY > bottom) {
+        dialog.close();
+      }
+    });
+  });
+
   // Attach click listeners to link cards for tracking
   const linkCards = document.querySelectorAll('.link-card');
   linkCards.forEach((card) => {
