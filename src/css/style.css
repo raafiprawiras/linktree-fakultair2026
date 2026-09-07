@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: var(--bg-primary, #000814);
-  background-image: url("/assets/background/BG-Mobile.png"), linear-gradient(135deg, #000814 0%, #001D3D 100%);
+  background-image: url("/assets/background/BG-Mobile.webp"), linear-gradient(135deg, #000814 0%, #001D3D 100%);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -31,7 +31,7 @@ body {
 /* Desktop Background Breakpoint (1024px+) */
 @media (min-width: 1024px) {
   body {
-    background-image: url("/assets/background/BG-Desktop.png"), url("/assets/background/BG-Mobile.png"), linear-gradient(135deg, #000814 0%, #001D3D 100%);
+    background-image: url("/assets/background/BG-Desktop.webp"), linear-gradient(135deg, #000814 0%, #001D3D 100%);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -147,8 +147,6 @@ body::before {
   background: var(--surface);
   border: 1px solid var(--border-card);
   text-decoration: none;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
   position: relative;
   overflow: hidden;

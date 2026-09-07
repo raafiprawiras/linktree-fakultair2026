@@ -10,13 +10,9 @@ export function initStaggerAnimation() {
   const cards = document.querySelectorAll('.link-card');
   
   cards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(14px)';
-    card.style.transition = 'opacity 350ms cubic-bezier(0.16, 1, 0.3, 1), transform 350ms cubic-bezier(0.16, 1, 0.3, 1)';
-    
-    setTimeout(() => {
-      card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
-    }, 120 + index * 55);
+    card.animate(
+      [{ transform: 'translateY(10px)' }, { transform: 'translateY(0)' }],
+      { duration: 250, delay: index * 25, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' },
+    );
   });
 }
