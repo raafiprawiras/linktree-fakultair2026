@@ -70,7 +70,7 @@ export function createResponsivePicture({
 export function handleImageFallback(img, basePath) {
   const currentSrc = img.src;
   const currentExt = currentSrc.split('.').pop().toLowerCase();
-  
+
   const nextExtMap = {
     avif: 'webp',
     webp: 'png',
