@@ -6,6 +6,7 @@ import '../css/style.css';
 import { initStaggerAnimation } from './animation.js';
 import { initImageFallbacks } from './imageLoader.js';
 import { trackLinkClick } from './utils.js';
+import './guidebook.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initStaggerAnimation();
