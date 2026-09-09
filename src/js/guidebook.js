@@ -116,7 +116,6 @@ export function initGuidebook(dialog) {
     session = null;
     clearTimeout(timer);
     current?.abort?.abort();
-    current?.viewer?.refresh();
     current?.viewer?.setDocument(null);
     current?.loading?.destroy().catch((error) => console.error('Guidebook cleanup:', error));
     controls();
@@ -146,8 +145,10 @@ export function initGuidebook(dialog) {
     const viewer = session.viewer;
     const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? container.clientHeight : 1);
     const scale = Math.min(4, Math.max(0.25, viewer.currentScale * Math.exp(-delta / 100)));
+    const bounds = container.getBoundingClientRect();
+    const [top, left] = viewer.containerTopLeft;
     // PDF.js preserves the pointer anchor and debounces expensive canvas rendering.
-    viewer.updateScale({ scaleFactor: scale / viewer.currentScale, origin: [event.clientX, event.clientY], drawingDelay: 120 });
+    viewer.updateScale({ scaleFactor: scale / viewer.currentScale, origin: [event.clientX - bounds.left + left, event.clientY - bounds.top + top], drawingDelay: 120 });
     syncZoom();
   }, { passive: false });
   dialog.addEventListener('close', () => { if (!dialog.open) close(); });

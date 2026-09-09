@@ -40,8 +40,9 @@ const custom = { value: 'custom', hidden: true };
 options.push(custom);
 Object.assign(elements['#guidebook-zoom'], { value: 'auto', options, querySelector: () => custom });
 const events = {};
+elements['#guidebook-preview'].getBoundingClientRect = () => ({ left: 10, top: 50 });
 class PDFViewer {
-  constructor(config) { viewer = this; this.config = config; this.currentScale = 1; }
+  constructor(config) { viewer = this; this.config = config; this.currentScale = 1; this.containerTopLeft = [0, 0]; }
   set currentScaleValue(value) {
     this.scaleValue = String(value);
     this.currentScale = value === 'auto' ? 1.25 : Number(value);
@@ -95,7 +96,7 @@ elements['#guidebook-preview'].listeners.wheel(wheel);
 assert.equal(prevented, 1);
 assert.ok(viewer.currentScale > 0.75);
 assert.equal(viewer.update.drawingDelay, 120);
-assert.deepEqual(Array.from(viewer.update.origin), [100, 200]);
+assert.deepEqual(Array.from(viewer.update.origin), [90, 150]);
 assert.equal(custom.hidden, false);
 assert.equal(elements['#guidebook-zoom'].value, String(viewer.currentScale));
 for (const [deltaY, scale] of [[-100000, 4], [100000, 0.25]]) {
