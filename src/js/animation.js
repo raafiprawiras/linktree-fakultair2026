@@ -8,7 +8,7 @@ export function initStaggerAnimation() {
   }
 
   const cards = document.querySelectorAll('.link-card');
-  
+
   cards.forEach((card, index) => {
     card.animate(
       [{ transform: 'translateY(10px)' }, { transform: 'translateY(0)' }],
